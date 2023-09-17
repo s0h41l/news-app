@@ -69,8 +69,11 @@ const Header: React.FC<HeaderProps> = ({
             open={Boolean(anchorElLanguage)}
             onClose={handleMenuClose}
           >
-            {languages.map((language: Language) => (
-              <MenuItem onClick={() => handleLanguageChange(language)}>
+            {languages.map((language: Language, key) => (
+              <MenuItem
+                onClick={() => handleLanguageChange(language)}
+                key={key}
+              >
                 {language.title}
               </MenuItem>
             ))}
